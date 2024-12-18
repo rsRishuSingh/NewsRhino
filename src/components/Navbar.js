@@ -19,8 +19,13 @@ export class Navbar extends Component {
 
     render() {
         return (
-            <div>
-                <nav className="navbar navbar-expand-lg bg-primary text-light">
+            <div style={{
+                position: "fixed",
+                zIndex: "1",
+                width: window.screen.width > '480' ? "99vw" : "100vw",
+                top: "0"
+            }}>
+                <nav className="navbar navbar-expand-lg bg-primary text-light ">
                     <div className="container-fluid">
                         <Link className="navbar-brand" to="/" onClick={() => this.handleCategoryClick('Home')}>
                             NewsRhino
@@ -103,14 +108,14 @@ export class Navbar extends Component {
                                 </li>
 
                             </ul>
-                            <form className="d-flex" role="search">
-                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                            <form className="d-flex" role="search" id="searchForm">
+                                <input className="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search" />
                                 <button className="btn btn-outline-light" type="submit">Search</button>
                             </form>
                         </div>
                     </div>
                 </nav>
-               
+
             </div>
         );
     }

@@ -75,7 +75,10 @@ export class News extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{
+                position: "relative",
+                top: "8vh"
+            }}>
                 <div className='container-fluid d-flex justify-content-center my-3 '><h1 className='fw-bold'>New Rhino - Top headlines</h1></div>
                 <div className='container-fluid d-flex justify-content-evenly  flex-wrap'>
 
@@ -101,7 +104,9 @@ export class News extends Component {
                             <Spinner />
                         </div>}
                 </div>
-                <div className='container-fluid d-flex justify-content-between pt-5 pb-2'>
+                <div className='container-fluid d-flex justify-content-between pt-5' style={{
+                    paddingBottom: "6.5rem"
+                }}>
                     <button type="button" disabled={this.state.page <= 1} className="btn btn-primary" onClick={this.handlePreviousClick}><img src={leftArrow} alt="" width="15" /> Previous</button>
                     <button type="button" disabled={this.state.page * 20 >= this.state.totalArticle} className="btn btn-primary" onClick={this.handleNextClick}>Next <img src={rightArrow} alt="" width="15" /></button>
                 </div>
