@@ -5,31 +5,45 @@ import rightArrow from './rightArrow.svg'
 import Spinner from './Spinner'
 export class News extends Component {
     articles = [];
-    constructor() {
-        super();
-        console.log("constructor called")
+    constructor(props) {
+        super(props);
+        // console.log("constructor called ", this.props.category)
+        console.log("constructor called ")
         this.state = {
             articles: this.articles,
             loading: false,
             page: 1,
 
         }
+        document.title = this.props.category + " - NewsRhino"
+
     }
 
     async getData(page) {
+        this.props.setProgress(10)
         this.setState({
             loading: false
         })
-        let url = `https://newsapi.org/v2/top-headlines?category=${this.props.category}&apiKey=0f06b59c3a4942dcb3f3d1b3222a0b19&page=${page}&pageSize=20`
+        console.log("getData ", this.props.category)
+
+        let category = this.props.category.charAt(0).toLowerCase() + this.props.category.slice(1)
+        if (category === 'home') {
+            category = "general"
+        }
+        console.log("getData -->  ", category)
+        let url = `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=0f06b59c3a4942dcb3f3d1b3222a0b19&page=${page}&pageSize=20`
         console.log("Hello World")
         let response = await fetch(url)
+        this.props.setProgress(30)
         let data = await response.json();
+        this.props.setProgress(70)
         console.log(data)
         this.setState({
             articles: data.articles,
             totalArticle: data.totalResults,
             loading: true
         })
+        this.props.setProgress(100)
     }
     // componentDidMount() {
     //     this.getData().then((data) => {
@@ -62,6 +76,7 @@ export class News extends Component {
     render() {
         return (
             <div>
+                <div className='container-fluid d-flex justify-content-center my-3 '><h1 className='fw-bold'>New Rhino - Top headlines</h1></div>
                 <div className='container-fluid d-flex justify-content-evenly  flex-wrap'>
 
                     {
@@ -74,6 +89,9 @@ export class News extends Component {
                                     description={element.description ? element.description : "Read more about this news by clicking on the read more"}
                                     newsUrl={element.url}
                                     imgUrl={element.urlToImage}
+                                    author={element.author}
+                                    source={element.source.name}
+                                    publishedAt={element.publishedAt}
                                 />
                             ))
                         ) : <div className="container-fluid text-center d-flex justify-content-center">

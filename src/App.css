@@ -32,3 +32,6 @@ border-radius: 10px !important;
 .text-primary{
 background-color: #721bff;
 }
+.start-100 {
+    left: 90% !important;
+}
