@@ -2,46 +2,37 @@ import './App.css';
 import Navbar from './components/Navbar.js';
 import News from './components/News.js';
 import Footer from './components/Footer.js';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
-export class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      progress: 0
-    }
-  }
-  setProgress = (progress) => {
-    this.setState({
-      progress: progress
-    })
-  }
-  render() {
-    return (
-      <>
-        <Router>
-          <Navbar />
-          <LoadingBar
-            color='#f11946'
-            progress={this.state.progress}
-            onLoaderFinished={() => this.setProgress(0)}
-          />
-          <Routes>
-            <Route path="/" element={<News setProgress={this.setProgress} category="Home" key="general" />} />
-            {/* <Route path="/home" element={<News  setProgress={this.setProgress} category="general" key="general" />} /> */}
-            <Route path="/business" element={<News setProgress={this.setProgress} category="Business" key="business" />} />
-            <Route path="/entertainment" element={<News setProgress={this.setProgress} category="Entertainment" key="entertainment" />} />
-            <Route path="/health" element={<News setProgress={this.setProgress} category="Health" key="health" />} />
-            <Route path="/science" element={<News setProgress={this.setProgress} category="Science" key="science" />} />
-            <Route path="/technology" element={<News setProgress={this.setProgress} category="Technology" key="technology" />} />
-            <Route path="/sports" element={<News setProgress={this.setProgress} category="Sports" key="sports" />} />
-          </Routes>
-          <Footer />
-        </Router>
-      </>
-    );
-  }
+const App = () => {
+
+  let apiKey = process.env.REACT_APP_NEWS_API;
+  let [progress, setProgress] = useState(0);
+  return (
+    <>
+      <Router>
+        <Navbar />
+        <LoadingBar
+          color='#f11946'
+          progress={progress}
+          onLoaderFinished={() => setProgress(0)}
+        />
+        <Routes>
+          <Route path="/" element={<News setProgress={setProgress} category="Home" key="general" apiKey={apiKey} />} />
+          {/* <Route path="/home" element={<News  setProgress={setProgress} category="general" key="general" />} /> */}
+          <Route path="/business" element={<News setProgress={setProgress} category="Business" key="business" />} apiKey={apiKey} />
+          <Route path="/entertainment" element={<News setProgress={setProgress} category="Entertainment" key="entertainment" />} apiKey={apiKey} />
+          <Route path="/health" element={<News setProgress={setProgress} category="Health" key="health" apiKey={apiKey} />} />
+          <Route path="/science" element={<News setProgress={setProgress} category="Science" key="science" apiKey={apiKey} />} />
+          <Route path="/technology" element={<News setProgress={setProgress} category="Technology" key="technology" apiKey={apiKey} />} />
+          <Route path="/sports" element={<News setProgress={setProgress} category="Sports" key="sports" apiKey={apiKey} />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </>
+  );
+
 }
 
 export default App;
