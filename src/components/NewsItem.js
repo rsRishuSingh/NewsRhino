@@ -10,7 +10,7 @@ export class NewsItem extends Component {
     constructor() {
         super();
         this.state = {
-            getWidth: window.screen.width > '480'
+            getWidth: window.screen.width > '630'
         }
     }
     static defaultProps = {

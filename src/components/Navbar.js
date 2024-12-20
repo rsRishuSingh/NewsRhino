@@ -19,104 +19,98 @@ export class Navbar extends Component {
 
     render() {
         return (
-            <div style={{
-                position: "fixed",
-                zIndex: "1",
-                width: window.screen.width > '480' ? "99vw" : "100vw",
-                top: "0"
-            }}>
-                <nav className="navbar navbar-expand-lg bg-primary text-light ">
-                    <div className="container-fluid">
-                        <Link className="navbar-brand" to="/" onClick={() => this.handleCategoryClick('Home')}>
-                            NewsRhino
-                        </Link>
 
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li className="nav-item">
-                                    <Link
-                                        className="nav-link "
-                                        to="/"
-                                        style={{ textDecoration: this.state.activeCategory === 'Home' ? 'underline' : 'none' }}
-                                        onClick={() => this.handleCategoryClick('Home')}
-                                    >
-                                        Home
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link
-                                        className="nav-link"
-                                        to="/business"
-                                        style={{ textDecoration: this.state.activeCategory === 'Business' ? 'underline' : 'none' }}
-                                        onClick={() => this.handleCategoryClick('Business')}
-                                    >
-                                        Business
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link
-                                        className="nav-link"
-                                        to="/entertainment"
-                                        style={{ textDecoration: this.state.activeCategory === 'Entertainment' ? 'underline' : 'none' }}
-                                        onClick={() => this.handleCategoryClick('Entertainment')}
-                                    >
-                                        Entertainment
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link
-                                        className="nav-link"
-                                        to="/health"
-                                        style={{ textDecoration: this.state.activeCategory === 'Health' ? 'underline' : 'none' }}
-                                        onClick={() => this.handleCategoryClick('Health')}
-                                    >
-                                        Health
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link
-                                        className="nav-link"
-                                        to="/science"
-                                        style={{ textDecoration: this.state.activeCategory === 'Science' ? 'underline' : 'none' }}
-                                        onClick={() => this.handleCategoryClick('Science')}
-                                    >
-                                        Science
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link
-                                        className="nav-link"
-                                        to="/technology"
-                                        style={{ textDecoration: this.state.activeCategory === 'Technology' ? 'underline' : 'none' }}
-                                        onClick={() => this.handleCategoryClick('Technology')}
-                                    >
-                                        Technology
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link
-                                        className="nav-link"
-                                        to="/sports"
-                                        style={{ textDecoration: this.state.activeCategory === 'Sports' ? 'underline' : 'none' }}
-                                        onClick={() => this.handleCategoryClick('Sports')}
-                                    >
-                                        Sports
-                                    </Link>
-                                </li>
+            <nav className="navbar navbar-expand-lg bg-primary text-light fixed-top">
+                <div className="container-fluid">
+                    <Link className="navbar-brand" to="/" onClick={() => this.handleCategoryClick('Home')}>
+                        NewsRhino
+                    </Link>
 
-                            </ul>
-                            <form className="d-flex" role="search" id="searchForm">
-                                <input className="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-light" type="submit">Search</button>
-                            </form>
-                        </div>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                <Link
+                                    className="nav-link "
+                                    to="/"
+                                    style={{ textDecoration: this.state.activeCategory === 'Home' ? 'underline' : 'none' }}
+                                    onClick={() => this.handleCategoryClick('Home')}
+                                >
+                                    Home
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link
+                                    className="nav-link"
+                                    to="/business"
+                                    style={{ textDecoration: this.state.activeCategory === 'Business' ? 'underline' : 'none' }}
+                                    onClick={() => this.handleCategoryClick('Business')}
+                                >
+                                    Business
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link
+                                    className="nav-link"
+                                    to="/entertainment"
+                                    style={{ textDecoration: this.state.activeCategory === 'Entertainment' ? 'underline' : 'none' }}
+                                    onClick={() => this.handleCategoryClick('Entertainment')}
+                                >
+                                    Entertainment
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link
+                                    className="nav-link"
+                                    to="/health"
+                                    style={{ textDecoration: this.state.activeCategory === 'Health' ? 'underline' : 'none' }}
+                                    onClick={() => this.handleCategoryClick('Health')}
+                                >
+                                    Health
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link
+                                    className="nav-link"
+                                    to="/science"
+                                    style={{ textDecoration: this.state.activeCategory === 'Science' ? 'underline' : 'none' }}
+                                    onClick={() => this.handleCategoryClick('Science')}
+                                >
+                                    Science
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link
+                                    className="nav-link"
+                                    to="/technology"
+                                    style={{ textDecoration: this.state.activeCategory === 'Technology' ? 'underline' : 'none' }}
+                                    onClick={() => this.handleCategoryClick('Technology')}
+                                >
+                                    Technology
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link
+                                    className="nav-link"
+                                    to="/sports"
+                                    style={{ textDecoration: this.state.activeCategory === 'Sports' ? 'underline' : 'none' }}
+                                    onClick={() => this.handleCategoryClick('Sports')}
+                                >
+                                    Sports
+                                </Link>
+                            </li>
+
+                        </ul>
+                        <form className="d-flex" role="search" id="searchForm">
+                            <input className="form-control me-2" style={{ borderRadius: '20px' }} type="search" id="searchInput" placeholder="Search" aria-label="Search" />
+                            <button className="btn btn-outline-light" style={{ borderRadius: '20px' }} type="submit">Search</button>
+                        </form>
                     </div>
-                </nav>
+                </div>
+            </nav>
 
-            </div>
         );
     }
 }
