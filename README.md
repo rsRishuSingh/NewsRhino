@@ -22,12 +22,12 @@ Welcome to **NewsRhino**, your go-to application for the latest news updates fro
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/the-zoomeee/News-Corner-using-react.git
+    git clone https://github.com/rsRishuSingh/NewsRhino
     ```
 
 2. Navigate to the project directory:
     ```sh
-    cd News-Corner-using-react
+    cd NewsRhino
     ```
 
 3. Install dependencies:
