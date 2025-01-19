@@ -1,6 +1,6 @@
 # NewsRhino
 
-Welcome to **NewsRhino**, your go-to application for the latest news updates from around the world. Built with React, News Corner offers a sleek, responsive design,using API (newsapi.org) and an intuitive interface to keep you informed and engaged.
+Welcome to **NewsRhino**, your go-to application for the latest news updates from around the world. Built with React, NewsRhino offers a sleek, responsive design,using API (newsapi.org) and an intuitive interface to keep you informed and engaged.
 
 ## Table of Contents
 - [Features](#features)
